@@ -1,4 +1,5 @@
 autocmd! bufwritepost .vimrc source %
+autocmd VimEnter * silent !echo -ne "\e[1 q"
 
 set nocompatible
 filetype off
@@ -12,15 +13,24 @@ Plugin 'jiangmiao/auto-pairs'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'smancill/conky-syntax.vim'
+Plugin 'sheerun/vim-polyglot'
+Plugin 'phanviet/vim-monokai-pro'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
 
-
 syntax enable
 
-colorscheme monokai
+set termguicolors
+colorscheme monokai_pro
 set background=dark
+
+let &t_SI = "\<Esc>[5 q"
+let &t_SR = "\<Esc>[3 q"
+let &t_EI = "\<Esc>[1 q"
+
+set timeoutlen=100
+set ttimeoutlen=50
 
 if has("gui_running")
 	set guifont=Fira\ Code\ 11
