@@ -1,5 +1,4 @@
 autocmd! bufwritepost .vimrc source %
-autocmd VimEnter * silent !echo -ne "\e[1 q"
 
 set nocompatible
 filetype off
